@@ -56,7 +56,8 @@ def get_block(size):  # size è la grandezza del blocco che vogliamo
     image = pygame.image.load(path).convert_alpha()
     surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
     # lo usiamo per indicare quale immagine del terreno vogliamo usare nell'immgagine Terrain.png (96,0 sono le coordianate del punto in alto a sx di dove inizia l'immagine simil-terra)
-    rect = pygame.Rect(96, 0, size, size)
+    rect = pygame.Rect(96, 128, size, size)
+    # (0,0)terreno pietra, (0,64) terreno legnoso, (0,128) terreno verde, (96,0) terreno terra
     surface.blit(image, (0, 0), rect)
     return pygame.transform.scale2x(surface)
 
